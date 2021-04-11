@@ -1,0 +1,16 @@
+{# TODO : manage errors display #}
+
+<form method="post">
+	<input type="hidden" value="{{ item.id }}" name="id">
+
+	<div>
+		<label for="name"> Nom </label>
+		<input type="text" value="{{ item.name }}" name="name" required>
+	</div>
+	<div>
+		<label for="address"> Adresse </label>
+		<input type="text" value="{{ item.adress }}" name="address" >
+	</div>
+
+	<input type="submit" value="Submit">
+</form>

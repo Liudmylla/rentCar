@@ -1,0 +1,7 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Agency Modification {{ item.title }}</h1>
+    {% include 'Agency/_form.html.twig' %}
+    <a href="/agency/show/{{ item.id }}">Back</a>
+{% endblock %}

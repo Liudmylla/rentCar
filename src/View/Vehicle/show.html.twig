@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+<div class="table">
+<h1>{{ item.brand }}   {{ item.model }}</h1>
+     <img style="max-width: 600px" src="{{item.image}}"alt="{{item.model}}">
+                 
+                
+    <a href="/vehicle/edit/{{ item.id }}"><button class="btn-update">Edit</button></a>
+    <form action="/vehicle/delete/{{item.id}}" method="POST" onsubmit="return confirm('Want you really delete this vehicle from database ?')">
+        <button class="btn-delete">Delete</button>
+    </form>
+    <a href="/vehicle/index"><button class="btn-back">Back</button></a>
+    </div>
+{% endblock %}

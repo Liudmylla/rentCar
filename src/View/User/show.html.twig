@@ -1,0 +1,14 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+    <h1>User {{ item.firstname }}</h1>
+    <h2>{{ item.lastname }}. {{ item.birthdate }}</h2>
+    <h2>{{ item.address }}</h2>
+    <h2> Role: {{ item.role }}. email : {{ item.email }}</h2>
+    <a href="/user/edit/{{ item.id }}">Edit</a>
+    <form action="/user/delete/{{item.id}}" method="POST" onsubmit="return confirm('Want you really delete this user from database ?')">
+        <button class="btn-delete">Delete</button>
+    </form>
+    <a href="/user/index">Back</a>
+{% endblock %}

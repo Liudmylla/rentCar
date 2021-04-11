@@ -1,0 +1,36 @@
+
+<form class="form" role="form" action="/User/add" method="POST">
+	<input type="hidden" value="{{ item.id }}" name="id">
+    <div>
+    <label for="lastname"> Nom :</label>
+    <input type="text" value="{{ item.lastname }}" name="lastname">
+    </div>
+    <div>
+    <label for="firstname"> Prénom :</label>
+    <input type="text" value="{{ item.firstname }}" name="firstname">
+    </div>
+    <div>
+    <label for="address"> Adresse :</label>
+    <input type="text" value="{{ item.address }}" name="address">
+    </div>
+    <div>
+    <label for="birthdate"> Date de naissance :</label>
+    <input type="date" value="{{ item.birthdate }}" name="birthdate">
+    </div>
+    <div>
+        <label for="email">E mail :</label>
+        <input type="email" value="{{ item.email }}" name="email">
+        </div>
+    <div>
+        <div>
+    <label for="password"> Password :</label>
+    <input type="password" value="{{ item.password }}" name="password">
+    </div>
+    <div>
+    <label for="role"> Role :</label>
+    <input type="text" value="{{ item.role }}" name="role">
+    </div>
+    <input type="submit" value="Submit">
+    
+
+</form>

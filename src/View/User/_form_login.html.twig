@@ -1,0 +1,16 @@
+
+<form class="form" role="form" method="post" action="/User/login/">
+    <h1>Login to continue</h1>
+	<input type="hidden" value="{{ user.id }}" name="id">
+    <div>
+    <label for="email"> Email </label>
+	<input type="email" value="{{ user.email }}" name="email" required>
+    </div>
+    <div>
+    <label for="password"> Password</label>
+    <input type="password" value="{{ item.password }}" name="password" required>
+	</div>
+    <input type="submit" value="Submit">
+    
+</form>
+

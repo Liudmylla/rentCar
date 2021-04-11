@@ -1,0 +1,46 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<div class="admin_pages_titre">
+<h1>Admin User list</h1>
+
+</div>
+        <table class="table">
+          
+    <thead style="font-size:18px;">
+        
+        <th>id</th>
+        <th>Firstname</th>
+        <th>Name</th>
+        <th>Email</th>
+         <th>Role</th>
+        
+        <th>
+            <a href="/user/add"><button class="btn-add">Add new user</button></a>
+        </th>
+    </thead>
+    <tbody>
+
+       {% for item in items |sort %}
+
+            <tr>
+
+             {#<td><img style="max-width: 10%;" src="{{item.image}}"alt="{{item.model}}"></td>#}
+                <td>{{item.id}}</td>
+                <td> {{item.firstname}}</td>
+                <td>{{item.lastname}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.role}}</td>
+
+                
+                <td><a href="/user/show/{{ item.id }}"><button class="btn-back">Show more</button></a> </td>
+                <td><a href="/user/edit/{{ item.id }}"><button class="btn-update">Edit</button></a> </td>
+                <td><form action="/user/delete/{{item.id}}" method="POST" onsubmit="return confirm('Want you really delete this user from database ?')">
+        <button class="btn-delete">Delete</button>
+    </form></td>
+               
+            </tr>
+          {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,27 @@
+{
+    "name": "CarRentalAgency",
+    "description": "training web-site with mvc pattern",
+    "authors": [
+        {
+            "name": "Liudmyla",
+            "email": "liudmyla.duvivier@outlook.fr"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "twig/twig": "^3.1",
+        "ext-pdo": "*"
+    },
+    "require-dev": {
+        "filp/whoops": "^2.9",
+        "phpmd/phpmd": "^2.9",
+        "phpro/grumphp": "^1.0",
+        "phpstan/phpstan": "^0.12.52",
+        "squizlabs/php_codesniffer": "^3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}

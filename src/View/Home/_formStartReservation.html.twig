@@ -1,0 +1,49 @@
+{# TODO : manage errors display #}
+
+
+<div id='slogan'>Find your Car </div>
+
+<form class="search_form" method="post" action="/Reservation/index/">
+	<input type="hidden" value="{{ item.id }}" name="id">
+<div class='form-container'>
+
+
+
+	<div class='form-group'>
+
+		<label for="agency"> Where </label>
+		<select id="agency" name="agency_id" required >
+
+			{# <option value="{{ item.agency_id }}">{{ item.agency_id }}</option> #}
+			<option value="1">Biarritz</option>
+			<option value="2">Bordeaux</option>
+			<option value="3">Londres</option>
+	
+		</select>
+	</div>
+	<div class='form-group'>
+
+	
+		<label for="datestart"> When </label>
+		<input type="date" value="{{ item.datestart }}" name="datestart" required >
+	</div>
+	<div class='form-group'>
+		<label for="dateend"> Upto </label>
+		<input type="date" value="{{ item.dateend }}" name="dateend" required >
+	</div>
+	<div class='form-group'>
+		<label for="category"> Which category </label>
+		<select id="category" name="category_id" required>
+
+			{# <option value="{{ item.category_id }}">{{ item.category_id }}</option> #}
+	
+			<option value="1">Luxe</option>
+			<option value="2">High</option>
+			<option value="3">Casual</option>
+			<option value="4">Economy</option>
+	
+		</select>
+	</div>
+</div>
+	<button id='search' type="submit" value="Search" >Search</button>
+</form>

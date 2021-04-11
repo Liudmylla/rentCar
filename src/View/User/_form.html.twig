@@ -1,0 +1,36 @@
+{# TODO : manage errors display #}
+
+
+<h1>Sign In formulaire</h1>
+
+    <form role="form" action="login.php" method="POST">
+
+        
+	<input type="hidden" value="{{ item.id }}" name="id">
+
+    <div>
+    <label for="lastname"> Nom :</label>
+    <input type="text" value="{{ item.lastname }}" name="lastname">
+    </div>
+    <div>
+    <label for="firstname"> Prénom :</label>
+    <input type="text" value="{{ item.firstname }}" name="firstname">
+    </div>
+    <div>
+    <label for="address"> Adresse :</label>
+    <input type="text" value="{{ item.address }}" name="address">
+    </div>
+    <div>
+    <label for="birthdate"> Date de naissance :</label>
+    <input type="date" value="{{ item.birthdate }}" name="birthdate">
+    </div>
+	<div>
+		<label for="email">email :</label>
+		<input type="email" value="{{ item.email }}" name="email">
+		</div>
+    <div>
+        <input type="submit"  name="SignIn"
+            value="Sign In">
+    </div>
+
+</form>

@@ -1,0 +1,36 @@
+
+<header>
+  
+    <nav>
+      <div class="logo" style="margin-top: 10px;">
+        <img src="/assets/images/logo.jpg">
+    </div>
+      <ul>
+         {% if not session.role %} 
+
+        <li><a href="/">Home</a></li>
+        <li><a href="/user/login">Login</a></li>
+        <li><a href="/User/signin">Signin</a></li>
+
+
+        {% elseif session.role and session.role is same as 'user' %}  
+        <li><a href="/">Home</a></li>
+        <!-- <li><a href="#">Reservation</a></li> -->
+        <li><a href="/user/disconnect">Disconnect </a></li>
+       Hello {{ session.firstname }} you're connected as a {{ session.role }}
+
+        {% elseif session.role and session.role is same as 'admin' %}  
+
+        <li><a href="/vehicle/index">Vehicle</a></li>
+        <li><a href="/user/index">User</a></li>
+        <li><a href="/agency/index">Agency</a></li>
+         <li><a href="#">Reservation</a></li>
+        <li><a href="/user/disconnect">Disconnect</a></li>
+       Hello {{ session.firstname }} you're connected as an {{ session.role }}
+
+        {% endif %}
+      </ul>
+    </nav>
+
+ 
+  </header>

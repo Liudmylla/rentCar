@@ -1,0 +1,41 @@
+{% extends 'layout.html.twig' %}
+
+
+{% block content %}
+
+<table class="table">
+    <h1>Vehicles Disponibles</h1>
+<thead style="font-size:18px;">
+  {#<th>Image</th>#}
+  <th>id</th>
+  <th>Brand</th>
+  <th>Model</th>
+  <th>Color</th>
+  <th>Gear box</th>
+   <th>Energy</th>
+  <th>Description</th>
+
+</thead>
+<tbody>
+    {% for item in items %}
+      <tr>
+       {#<td><img style="max-width: 10%;" src="{{item.image}}"alt="{{item.model}}"></td>#}
+          <td>{{item.id}}</td>
+          <td>{{item.brand}}</td>
+          <td> {{item.model}}</td>
+          <td>{{item.color}}</td>
+          <td>{{item.gear_box}}</td>
+          <td>{{item.energy}}</td>
+          <td>{{item.description}}</td>
+          <td><a href="/reservation/show/{{ item.id }}"><button class="btn-back">Show more</button></a> </td>
+          <td><a href="/reservation/validation/{{ item.id }}"><button class="btn-update">Reserve Here</button></a> </td>
+         
+         
+      </tr>
+    {% endfor %}
+    <a href="/">Back</a>
+</tbody>
+</table>
+
+  
+{% endblock %}

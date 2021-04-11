@@ -1,0 +1,18 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<div class="admin_pages_titre">
+<h1>Admin Agency list</h1>
+</div>
+    
+    <ul>
+        {% for item in items %}
+        
+            <li><a href="/agency/show/{{ item.id }}">{{ item.name }}. {{ item.address }}</a></li>
+        {% else %}
+            <li>Nothing to display</li>
+        {% endfor %}
+    </ul>
+    <a href="/agency/add">Ajouter</a>
+         <a href="/">Home</a>
+{% endblock %}

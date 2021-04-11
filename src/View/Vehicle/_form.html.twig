@@ -1,0 +1,66 @@
+{# TODO : manage errors display #}
+
+
+<form  method="post">
+	
+	<input type="hidden" value="{{ item.id }}" name="id">
+	<div>
+		<label for="category"> Select the Category:</label>
+		<select id="category" name="category_id">
+			<option value="{{ item.category_id }}">{{ item.category_id }}</option>
+			<option value="1">Class A</option>
+			<option value="2">Class B</option>
+			<option value="3">Class C</option>
+			<option value="4">Class D</option>
+			<option value="5">Class E</option>
+		</select>
+	</div>
+	<div>
+		<label for="agency"> Select the Agency:</label>
+		<select id="agency" name="agency_id">
+			<option value="{{ item.agency_id }}">{{ item.agency_id }}</option>
+			<option value="1">Bayonne</option>
+			<option value="2">Dax</option>
+			<option value="3">Bordeaux</option>
+			<option value="4">Toulouse</option>
+		</select>
+	</div>
+	<div>
+		<label for="brand"> Select the Brand:</label>
+		<input type="text" value="{{ item.brand }}" name="brand">
+	</div>
+	<div>
+		<label for="model"> Select the Model:</label>
+		<input type="text" value="{{ item.model }}" name="model">
+	</div>
+	<div>
+		<label for="image"> Select the Image:</label>
+		<input type="text" value="{{ item.image }}" id="image" name="image">
+	</div>
+	<div>
+		<label for="color"> Select the Color:</label>
+		<input type="text" value="{{ item.color }}" id="color" name="color">
+	</div>
+	<div>
+		<label for="desc"> Select the Description:</label>
+		<input type="text" value="{{ item.description }}" id= "desc" name="description">
+	</div>
+	<div>
+		<label for="gearBox"> Select the Gear Box:</label>
+		<select id="gearBox" name="gear_box">
+			<option value="Manual">Manual</option>
+			<option value="Auto">Automatic</option>
+		</select>
+	</div>
+	<div>
+		<label for="energy"> Select the type of energy Power :</label>
+		<select id="energy" name="energy">
+			<option value="Electric">Electric</option>
+			<option value="Gasoil">Gasoil</option>
+			<option value="Petrol">Petrol</option>
+			<option value="Solar">Solar</option>
+		</select>
+	</div>
+	<input type="submit" value="Valider">
+</form>
+

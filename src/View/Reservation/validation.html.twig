@@ -1,0 +1,35 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+ 
+
+  <div class="container">
+    <img style="max-width: 10%" src="{{session.reservation.image}}"alt="{{item.model}}"/>
+    <h2>Vehicle: {{ item.description }}</h2>
+    <h5>Brand / Model: {{ item.brand }}. {{ item.model }}</h5>
+    <h5>Color: <span>{{item.color}}</span></h5>
+    <h5>Energy: <span>{{item.energy}}</span></h5>
+    <h5>Start: <span>{{ item.dateStart }}</span> End : <span>{{ item.dateEnd }}</span> Nb days <span>{{ item.nbDays }}</span></h5>
+   
+    <table class="table">
+        <thead style="font-size:18px;">
+            <th>Agency</th>
+            <th>Address</th>
+            <th>Price</th>
+            <th>Total cost</th>
+        </thead>
+        <tbody>
+                <tr> 
+                    <td> {{item.name }}</td>
+                    <td>{{item.address}}</td>
+                    <td>{{ item.price }} Euros</td>
+                    <td>{{ item.totalCost }} Euro</td>
+                   
+                </tr>
+        </tbody>
+    </table>
+    <form action="/reservation/payment/{{item.id}}" method="POST">
+        <button class ="btn-delete">Payment</button>
+    </form>
+</div>
+{% endblock %}

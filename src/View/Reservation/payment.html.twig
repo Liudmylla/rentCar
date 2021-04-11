@@ -1,0 +1,10 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <h1>Vehicle {{ item.description }}</h1>
+    <h2>{{ item.brand }}. {{ item.model }}</h2>
+    <h2>Thanking your for your purchase</h2>
+    <h2> Your vehicle will be available in our agency: {{ item.agency }}</h2>
+    <h2> on day {{ item.dateStart }}</h2>
+    <a href="/">Home</a>
+{% endblock %}
