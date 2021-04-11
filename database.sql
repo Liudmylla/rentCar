@@ -109,10 +109,10 @@ TRUNCATE TABLE `vehicle`;
 
 
 INSERT INTO `vehicle` (`id_vehicle`, `category_id`, `agency_id`, `brand`, `model`, `image`, `color`, `gear_box`, `energy`, `description`, `date_entry`) VALUES
-(1, 1, 1, 'Bugatti', 'Type 17', NULL, 'Red', 'Manual', '', '8 soupapes - 1910 - collector', '2021-04-05 09:21:43'),
-(2, 2, 1, 'Peugeot', '208 C++', NULL, 'Red', 'Manual', '', 'Cabriolet - 4 places - pas de coffre', '2021-04-05 09:21:43'),
-(3, 2, 1, 'Volkwagen', 'Golf 9S -16V', NULL, 'Dark Black', 'Manual', '', 'Modèle Sport', '2021-04-05 09:21:43'),
-(4, 2, 1, 'Audi', 'Q12', NULL, 'White', 'Auto', '', 'modèle familial', '2021-04-05 09:21:43');
+(1, 1, 1, 'Bugatti', 'Type 17', 'https://stickers-muraux-enfant.fr/5148-large_default/sticker-autocollant-voiture-bugatti-veyron-bleu-sport-130x83-cm-bugatti-veyron-b.jpg', 'Red', 'Manual', '', '8 soupapes - 1910 - collector', '2021-04-05 09:21:43'),
+(2, 2, 1, 'Peugeot', '208 C++', 'https://cdn.motor1.com/images/mgl/PpkJG/s3/peugeot-308-rendering.jpg', 'Red', 'Manual', '', 'Cabriolet - 4 places - pas de coffre', '2021-04-05 09:21:43'),
+(3, 2, 1, 'Volkwagen', 'Golf 9S -16V', 'https://offers.volkswagen.be/sites/vw_offers/files/styles/car_overview/public/offer/overview-main/polo-default.png?itok=YKuT2avZ', 'Dark Black', 'Manual', '', 'Modèle Sport', '2021-04-05 09:21:43'),
+(4, 2, 1, 'Audi', 'Q12', 'https://www.turbo.fr/sites/default/files/2020-09/audi-a3-sportback-40-tfsi-e-2020.jpg', 'White', 'Auto', '', 'modèle familial', '2021-04-05 09:21:43');
 
 
 
