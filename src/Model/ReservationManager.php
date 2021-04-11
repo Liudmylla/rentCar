@@ -78,8 +78,8 @@ class ReservationManager extends AbstractManager
     public function update(array $item): bool
     {
         //to modify
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE1 . " SET `title` = :title WHERE id_rent=:id");
-        $statement->bindValue('id_rent', $item['id'], \PDO::PARAM_INT);
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE1 . " SET `title` = :title WHERE id_rent=:id_rent");
+        $statement->bindValue('id_rent', $item['id_rent'], \PDO::PARAM_INT);
         $statement->bindValue('user_id', $item['category_id'], \PDO::PARAM_INT);
         $statement->bindValue('vehicle_id', $item['agency_id'], \PDO::PARAM_INT);
         $statement->bindValue('date_creation', $item['brand'], \PDO::PARAM_STR);

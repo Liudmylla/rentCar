@@ -76,7 +76,7 @@ class ReservationController extends AbstractController
     public function validation(int $id): string
     {
         $vehicleManager = new VehicleManager;
-        $vehicle = $vehicleManager->selectOneById($id);
+        $vehicle = $vehicleManager->selectOneVehicleById($id);
         $itemManager = new ReservationManager();
         $item = $itemManager->selectOneVehicle($id);
       
@@ -188,7 +188,7 @@ class ReservationController extends AbstractController
         $items = $itemManager->selectAgencyVehicles($this->agencyId, $this->categoryId);
         $availableVehicles = [];
         foreach ($items as $key => $vehicle) {
-            $vehicleId = $vehicle['id'];
+            $vehicleId = $vehicle['id_vehicle'];
 
             $rentHistory = $itemManager->selectRentedHistory($vehicleId);
             $available = 'ok';

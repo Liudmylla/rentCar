@@ -66,6 +66,7 @@ class VehicleManager extends AbstractManager
 
         return $statement->fetch();
     }
+    
     public function deleteVehicle(int $id): void
     {
         // prepared request

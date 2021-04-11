@@ -103,10 +103,10 @@ nav li {
 }
 div#carousel { 
   perspective: 1200px; 
-  background:  #DA4453;
+  /* background:  #DA4453; */
   padding-top: 5%; 
   font-size:0; 
-  margin-bottom: 3rem; 
+  margin-top: 2rem; 
 
 }
 figure#spinner { 
@@ -154,7 +154,7 @@ figure#spinner figure.current.caption figcaption
   bottom: 0; 
 } 
 div#carousel ~ span { 
-  color: rgb(252, 247, 247); 
+  color: rgb(95, 90, 90); 
   margin: 5% 20%; 
   display: inline-block; 
   text-decoration: none; 
@@ -166,7 +166,7 @@ div#carousel ~ span {
   line-height: 0; 
 }
 div#carousel ~ span:hover { 
-  color: #888; 
+  color: rgb(206, 105, 105); 
   cursor: pointer; 
 }
 .table {

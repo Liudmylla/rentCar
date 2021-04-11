@@ -183,7 +183,7 @@ class UserController extends AbstractController
     {
         if ('POST' === $_SERVER['REQUEST_METHOD']) {
             $itemManager = new UserManager();
-            $itemManager->delete($id);
+            $itemManager->deleteUser($id);
             header('Location:/User/index');
         }
     }

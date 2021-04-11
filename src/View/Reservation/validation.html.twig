@@ -28,8 +28,9 @@
                 </tr>
         </tbody>
     </table>
-    <form action="/reservation/payment/{{item.id}}" method="POST">
+    <form action="/reservation/payment/{{item.id_vehicle}}" method="POST">
         <button class ="btn-delete">Payment</button>
     </form>
+    <a href="/reservation/index">Back</a>
 </div>
 {% endblock %}

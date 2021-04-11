@@ -4,20 +4,16 @@
 <div id='slogan'>Find your Car </div>
 
 <form class="search_form" method="post" action="/Reservation/index/">
-	<input type="hidden" value="{{ item.id }}" name="id">
+	<input type="hidden" value="{{ item.id_rent }}" name="id_rent">
 <div class='form-container'>
-
-
-
 	<div class='form-group'>
-
 		<label for="agency"> Where </label>
 		<select id="agency" name="agency_id" required >
-
-			{# <option value="{{ item.agency_id }}">{{ item.agency_id }}</option> #}
-			<option value="1">Biarritz</option>
-			<option value="2">Bordeaux</option>
-			<option value="3">Londres</option>
+		
+		{# {<option value="{{ item.agency_id }}">{{ item.agency_id }}</option> #}
+		<option value="1">Anglet</option>
+		<option value="2">Bordeaux</option>
+		<option value="3">Londres</option>
 	
 		</select>
 	</div>

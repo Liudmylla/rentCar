@@ -33,9 +33,9 @@
                 <td>{{item.role}}</td>
 
                 
-                <td><a href="/user/show/{{ item.id }}"><button class="btn-back">Show more</button></a> </td>
-                <td><a href="/user/edit/{{ item.id }}"><button class="btn-update">Edit</button></a> </td>
-                <td><form action="/user/delete/{{item.id}}" method="POST" onsubmit="return confirm('Want you really delete this user from database ?')">
+                <td><a href="/user/show/{{ item.id_user }}"><button class="btn-back">Show more</button></a> </td>
+                <td><a href="/user/edit/{{ item.id_user }}"><button class="btn-update">Edit</button></a> </td>
+                <td><form action="/user/delete/{{item.id_user}}" method="POST" onsubmit="return confirm('Want you really delete this user from database ?')">
         <button class="btn-delete">Delete</button>
     </form></td>
                
