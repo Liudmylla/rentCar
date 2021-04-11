@@ -6,10 +6,11 @@
 </div>
 <div class="container">
     
-        <table class="table">
+        <table class="tableAdmin">
           
     <thead style="font-size:18px;">
-        <th>id</th>
+
+        <th>Id</th>
         <th>Brand</th>
         <th>Model</th>
         <th>Color</th>
@@ -25,16 +26,17 @@
        {% for item in items |sort %}
 
             <tr> 
-                <td>{{item.id}}</td>
+             
+                <td> {{item.id_vehicle}}</td>
                 <td> {{item.brand}}</td>
                 <td> {{item.model}}</td>
                 <td>{{item.color}}</td>
                 <td>{{item.gear_box}}</td>
                 <td>{{item.energy}}</td>
                 <td>{{item.description}}</td>
-                <td><a href="/vehicle/show/{{ item.id }}"><button class="btn-back">Show more</button></a> </td>
-                <td><a href="/vehicle/edit/{{ item.id }}"><button class="btn-update">Edit</button></a> </td>
-                <td><form action="/vehicle/delete/{{item.id}}" method="POST" onsubmit="return confirm('Want you really delete this vehicle from database ?')">
+                <td><a href="/vehicle/show/{{ item.id_vehicle }}"><button class="btn-back">Show more</button></a> </td>
+                <td><a href="/vehicle/edit/{{ item.id_vehicle }}"><button class="btn-update">Edit</button></a> </td>
+                <td><form action="/vehicle/delete/{{item.id_vehicle}}" method="POST" onsubmit="return confirm('Want you really delete this vehicle from database ?')">
         <button class="btn-delete">Delete</button>
     </form></td>
                

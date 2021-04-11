@@ -56,7 +56,7 @@ class UserController extends AbstractController
     public function getRole(int $id): string
     {
         $itemManager = new UserManager();
-        $item = $itemManager->selectOneById($id);
+        $item = $itemManager->selectOneUserById($id);
 
         return $item['role'];
     }
@@ -78,7 +78,7 @@ class UserController extends AbstractController
     public function show(int $id): string
     {
         $userManager = new UserManager();
-        $item = $userManager->selectOneById($id);
+        $item = $userManager->selectOneUserById($id);
 
         return $this->twig->render('User/show.html.twig', ['item' => $item]);
     }
@@ -89,7 +89,7 @@ class UserController extends AbstractController
     public function edit(int $id): string
     {
         $userManager = new UserManager();
-        $item = $userManager->selectOneById($id);
+        $item = $userManager->selectOneUserById($id);
 
         if ('POST' === $_SERVER['REQUEST_METHOD']) {
             // clean $_POST data
@@ -120,7 +120,7 @@ class UserController extends AbstractController
                 $_SESSION['role'] = $item['role'];
                 $_SESSION['email'] = $item['email'];
                 $_SESSION['password'] = $item['password'];
-                $_SESSION['loginId'] = $item['id'];
+                $_SESSION['loginId'] = $item['id_user'];
 
                 if ('admin' === $_SESSION['role']) {
                     header('Location: /vehicle/index');

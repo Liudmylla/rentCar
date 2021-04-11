@@ -22,10 +22,12 @@ class VehicleController extends AbstractController
     /**
      * Show informations for a specific item
      */
-    public function show(int $id): string
-    {
+    public function show( int $id)
+    { 
+       
         $itemManager = new VehicleManager();
-        $item = $itemManager->selectOneById($id);
+        $item = $itemManager->selectOneVehicleById($id);
+       
 
         return $this->twig->render('Vehicle/show.html.twig', ['item' => $item]);
     }
@@ -36,7 +38,7 @@ class VehicleController extends AbstractController
     public function edit(int $id): string
     {
         $itemManager = new VehicleManager();
-        $item = $itemManager->selectOneById($id);
+        $item = $itemManager->selectOneVehicleById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
@@ -84,7 +86,7 @@ class VehicleController extends AbstractController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $itemManager = new VehicleManager();
-            $itemManager->delete($id);
+            $itemManager->deleteVehicle($id);
             header('Location:/vehicle/index');
         }
     }

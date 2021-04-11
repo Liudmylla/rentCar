@@ -16,9 +16,9 @@ class ReservationManager extends AbstractManager
     public function selectOneVehicle(int $id)
     {
         $query = 'SELECT * FROM ' . self::TABLE3 . ' AS ve ';
-        $query .= 'JOIN ' . self::TABLE4 . ' AS ca ON ca.id=ve.category_id ';
-        $query .= 'JOIN ' . self::TABLE2 . ' AS ag ON ag.id=ve.agency_id ';
-        $query .= 'WHERE ve.id = ' . $id;
+        $query .= 'JOIN ' . self::TABLE4 . ' AS ca ON ca.id_category=ve.category_id ';
+        $query .= 'JOIN ' . self::TABLE2 . ' AS ag ON ag.id_agency=ve.agency_id ';
+        $query .= 'WHERE ve.id_vehicle = ' . $id;
 
         return $this->pdo->query($query)->fetch();
     }
@@ -28,8 +28,8 @@ class ReservationManager extends AbstractManager
     public function selectAgencyVehicles(int $agencyId, int $categoryId, string $orderBy = '', string $direction = 'ASC'): array
     {
         $query = 'SELECT * FROM ' . self::TABLE3 . ' AS ve ';
-        $query .= 'JOIN ' . self::TABLE4 . ' AS ca ON ca.id=ve.category_id ';
-        $query .= 'JOIN ' . self::TABLE2 . ' AS ag ON ag.id=ve.agency_id ';
+        $query .= 'JOIN ' . self::TABLE4 . ' AS ca ON ca.id_category=ve.category_id ';
+        $query .= 'JOIN ' . self::TABLE2 . ' AS ag ON ag.id_agency=ve.agency_id ';
         $query .= 'WHERE ve.agency_id = ' . $agencyId;
         $query .= ' AND ve.category_id = ' . $categoryId;
         if ($orderBy) {
@@ -78,8 +78,8 @@ class ReservationManager extends AbstractManager
     public function update(array $item): bool
     {
         //to modify
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE1 . " SET `title` = :title WHERE id=:id");
-        $statement->bindValue('id', $item['id'], \PDO::PARAM_INT);
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE1 . " SET `title` = :title WHERE id_rent=:id");
+        $statement->bindValue('id_rent', $item['id'], \PDO::PARAM_INT);
         $statement->bindValue('user_id', $item['category_id'], \PDO::PARAM_INT);
         $statement->bindValue('vehicle_id', $item['agency_id'], \PDO::PARAM_INT);
         $statement->bindValue('date_creation', $item['brand'], \PDO::PARAM_STR);

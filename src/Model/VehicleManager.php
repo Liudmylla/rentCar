@@ -44,8 +44,8 @@ class VehicleManager extends AbstractManager
             `gear_box` = :gear_box, 
             `energy` = :energy
 
-        WHERE id=:id");
-        $statement->bindValue('id', $item['id'], \PDO::PARAM_INT);
+        WHERE id_vehicle=:id_vehicle");
+        $statement->bindValue('id_vehicle', $item['id_vehicle'], \PDO::PARAM_INT);
         $statement->bindValue('category_id', $item['category_id'], \PDO::PARAM_INT);
         $statement->bindValue('agency_id', $item['agency_id'], \PDO::PARAM_INT);
         $statement->bindValue('brand', $item['brand'], \PDO::PARAM_STR);
@@ -56,5 +56,21 @@ class VehicleManager extends AbstractManager
         $statement->bindValue('gear_box', $item['gear_box'], \PDO::PARAM_STR);
         $statement->bindValue('energy', $item['energy'], \PDO::PARAM_STR);
         return $statement->execute();
+    }
+    public function selectOneVehicleById(int $id)
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE id_vehicle =$id");
+        $statement->bindValue('id_vehicle', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetch();
+    }
+    public function deleteVehicle(int $id): void
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("DELETE FROM " . static::TABLE . " WHERE id_vehicle=$id");
+        $statement->bindValue('id_vehicle', $id, \PDO::PARAM_INT);
+        $statement->execute();
     }
 }

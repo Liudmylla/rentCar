@@ -43,8 +43,8 @@ class UserManager extends AbstractManager
     public function update(array $item): bool
     {
         // to modify
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `title` = :title WHERE id=:id");
-        $statement->bindValue('id', $item['id'], \PDO::PARAM_INT);
+        $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `title` = :title WHERE id_user=:id");
+        $statement->bindValue('id_user', $item['id'], \PDO::PARAM_INT);
         $statement->bindValue('firstname', $item['firstname'], \PDO::PARAM_INT);
         $statement->bindValue('lastname', $item['lastname'], \PDO::PARAM_INT);
         $statement->bindValue('birthdate', $item['birthdate'], \PDO::PARAM_STR);
@@ -70,6 +70,15 @@ class UserManager extends AbstractManager
         $statement->bindValue('email', $email, \PDO::PARAM_STR);
         $statement->bindValue('password', $password, \PDO::PARAM_STR);
         $statement->execute();
+        return $statement->fetch();
+    }
+    public function selectOneUserById(int $id)
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("SELECT * FROM " . static::TABLE . " WHERE id_user=:id");
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
         return $statement->fetch();
     }
 }

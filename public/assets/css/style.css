@@ -24,6 +24,7 @@ body {
   color: rgba(87, 84, 84, 0.781);
   font-weight: bold;
   font-size: 18px;
+  padding:  5px 5px 5px 25px ;
 }
 a{
   text-decoration: none;
@@ -175,12 +176,17 @@ div#carousel ~ span:hover {
   text-align: center;
   color: rgba(87, 84, 84, 0.781);
 
-
 }
 .table td {
   margin-left: 20px;
   padding:20px;
   
+}
+.tableAdmin th, td{
+  padding-left: 20px;
+}
+.tableAdmin th{
+  text-align: left;
 }
 .container {
   padding: 10px;
