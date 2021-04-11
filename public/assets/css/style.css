@@ -32,9 +32,11 @@ a{
 header{
   margin-top: 1rem;
   margin-left: 1rem;
+  margin-bottom: 1rem;
 }
 #slogan{
-  color: rgba(87, 84, 84, 0.781);
+  /* color: rgba(87, 84, 84, 0.781); */
+  color:#d4af37;
   text-align: center;
   font-size: 28px;
   text-transform: uppercase;  
@@ -49,7 +51,7 @@ nav a {
  
 }
 nav a:hover {
-  color:#DA4453;
+  color:#d4af37;
 }
 p { 
   margin-top: 10rem;
@@ -74,7 +76,7 @@ nav li {
   
 }
 .btn-update {
-  color:rgb(223, 194, 66);
+  color:#d4af37;
   
 }
 .btn-back {
@@ -96,9 +98,10 @@ nav li {
   justify-content: center;
 }
 
-#search {
+button#search {
 
   margin-left: 48%;
+ 
   
 }
 div#carousel { 
@@ -166,7 +169,7 @@ div#carousel ~ span {
   line-height: 0; 
 }
 div#carousel ~ span:hover { 
-  color: rgb(206, 105, 105); 
+  color: #d4af37;
   cursor: pointer; 
 }
 .table {
@@ -198,5 +201,6 @@ font-size: 18px;
 }
 span{
   font-style: italic;
-  color:#DA4453;
+  color:#d4af37;
+  font-weight: bold;
 }

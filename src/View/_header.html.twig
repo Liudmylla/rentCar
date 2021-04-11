@@ -2,9 +2,9 @@
 <header>
   
     <nav>
-      {# <div class="logo" style="margin-top: 10px;">
+      <div class="logo" style="margin-top: 10px;">
         <img src="/assets/images/logo.jpg">
-    </div> #}
+    </div> 
       <ul>
          {% if not session.role %} 
 
@@ -17,7 +17,8 @@
         <li><a href="/">Home</a></li>
         <!-- <li><a href="#">Reservation</a></li> -->
         <li><a href="/user/disconnect">Disconnect </a></li>
-       Hello {{ session.firstname }} you're connected as a {{ session.role }}
+       {# Hello {{ session.firstname }} you're connected as a {{ session.role }} #}
+       Hello {{ session.firstname }} !
 
         {% elseif session.role and session.role is same as 'admin' %}  
 
@@ -26,7 +27,7 @@
         <li><a href="/agency/index">Agency</a></li>
          <li><a href="#">Reservation</a></li>
         <li><a href="/user/disconnect">Disconnect</a></li>
-       Hello {{ session.firstname }} you're connected as an {{ session.role }}
+       Hello {{ session.role }} {{ session.firstname }} !
 
         {% endif %}
       </ul>
